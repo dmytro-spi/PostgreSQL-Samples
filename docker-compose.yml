@@ -1,0 +1,22 @@
+version: '3.9'
+volumes:
+  dbbackups:
+  postgis-data:
+
+services:
+
+  db:
+    image: kartoza/postgis:14-3.2
+    volumes:
+      - postgis-data:/var/lib/postgresql
+      - dbbackups:/backups
+    environment:
+      - POSTGRES_DB=mydb
+      - POSTGRES_USER=iam
+      - POSTGRES_PASS=pass
+      - POSTGRES_MULTIPLE_EXTENSIONS=postgis,hstore,postgis_topology,postgis_raster,pgrouting
+    ports:
+      - "5432:5432"
+    restart: on-failure
+    healthcheck:
+      test: "exit 0"

@@ -1,0 +1,25 @@
+{
+  "name": "postgresql-adv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "start": "tsc && node ./dist/app.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "install": "^0.13.0",
+    "npm": "^8.15.0",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.6.5",
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19",
+    "typescript": "^4.7.4"
+  }
+}
